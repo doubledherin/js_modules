@@ -13,6 +13,13 @@ const config = {
     // 'dist' directory that's inserted into current directory (specified by '__dirname')
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        use: 'babel-loader'
+      }
+    ]
   }
 }
 
