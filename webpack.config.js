@@ -13,7 +13,8 @@ const config = {
     // Here, the resolve function saves the bundle.js file into a newly created
     // 'dist' directory that's inserted into current directory (specified by '__dirname')
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: 'dist/'
   },
   module: {
     rules: [
@@ -32,7 +33,7 @@ const config = {
         use: [
           {
             loader: 'url-loader',
-            options: { limit: 40000 } // include images that are 40k or under in bundle.js; bigger ones should be saved as a separate file
+            options: { limit: 40000 }
           },
           'image-webpack-loader'
         ]
