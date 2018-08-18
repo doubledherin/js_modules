@@ -26,6 +26,16 @@ const config = {
           loader: 'css-loader'
         }),
         test: /\.css$/
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 40000 } // include images that are 40k or under in bundle.js; bigger ones should be saved as a separate file
+          },
+          'image-webpack-loader'
+        ]
       }
     ]
   },
