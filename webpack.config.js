@@ -19,6 +19,10 @@ const config = {
       {
         use: 'babel-loader',
         test: /\.js$/
+      },
+      {
+        use: ['style-loader', 'css-loader'],
+        test: /\.css$/
       }
     ]
   }
